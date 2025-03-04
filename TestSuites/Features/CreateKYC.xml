@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CreateKYC">
+    <listeners>
+        <listener class-name="listeners.ITestListener_Listener"/>
+<!--        <listener class-name="listeners.IRetryAnalyzer_Listener"/>-->
+    </listeners>
+
+    <!--<parameter name="browser" value="chrome"/>-->
+    
+    <test name="CreateKYC">
+        <classes>
+            <class name="tests.add_KYC_tests.Create_Submit_Register_KYC_Tests"/>
+        </classes>
+    </test>
+
+</suite>
