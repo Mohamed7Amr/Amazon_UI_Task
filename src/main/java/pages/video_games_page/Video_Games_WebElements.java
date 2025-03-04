@@ -28,8 +28,8 @@ public class Video_Games_WebElements extends Page_Base {
     By sort_DDL_Locator = By.xpath( "//span[@class='a-dropdown-label'][contains(text(),'Sort by:')]");
     By high_To_Low_Option_Locator = By.xpath( "//li[contains(.,'Price: High to Low')]");
 //    By product_Price_Label_Locator = By.xpath("//span[@class='a-price']//span[@class='a-price-whole']");
-    By product_Price_Label_Locator = By.xpath("//div[@data-cy='price-recipe']//span[@class='a-price']/span[@class='a-offscreen']");
-//    By search_Result_Form_Locator = By.xpath("//form[@method='post']");//span[@data-component-type='s-search-results']//span[@class='a-price']/span[@class='a-offscreen']  //div[@data-cy='price-recipe']//span[@class='a-offscreen']
+    By product_Price_Label_Locator = By.xpath("//span[@data-component-type='s-search-results']//span[@class='a-price']/span[@class='a-offscreen']");
+//    By search_Result_Form_Locator = By.xpath("//form[@method='post']");//span[@data-component-type='s-search-results']//span[@class='a-price']/span[@class='a-offscreen']  //div[@data-cy='price-recipe']//span[@class='a-offscreen'] //div[@data-cy='price-recipe']//span[@class='a-price']/span[@class='a-offscreen']
     By inner_Card_Of_Search_Result_Info_Locator = By.xpath("//div[@data-cy='price-recipe']/parent::div[@class='puisg-col-inner']");
     By add_To_Cart_Btn_Locator = By.xpath("//button[@class='a-button-text'][text()='Add to cart']");
     By next_Page_Btn_Locator = By.xpath("//a[contains(text(),'Next')]");

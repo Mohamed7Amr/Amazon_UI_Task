@@ -94,7 +94,12 @@
         {
             wait_Element_Visibility(10, ele);
             scrollTo_Highlight(ele,"yellow");
-            return ele.getText();
+            try{
+                return ele.getText();
+            }
+            catch (Exception e){
+                return js_Get_Text(ele);
+            }
         }
         protected void thread_Sleep(int seconds)
         {
@@ -107,6 +112,12 @@
         protected void press_Enter_On(WebElement ele)
         {
             ele.sendKeys(Keys.ENTER);
+        }
+
+        /****************************************NAVIGATION_ACTIONS*******************************************/
+        public void reload()
+        {
+            driver.navigate().refresh();
         }
 
         /*****************************************WINDOWS_HANDLING*********************************************/
@@ -134,12 +145,27 @@
          */
         protected WebElement find_Element(By locator)
         {
-            return driver.findElement(wait_Locator_Visibility(locator));
+            try {
+                return driver.findElement(wait_Locator_Visibility(locator));
+            }
+            catch (TimeoutException e)
+            {
+                e.printStackTrace();
+                reload();
+                return driver.findElement(wait_Locator_Visibility(locator));
+            }
         }
         protected List<WebElement> find_Elements(By locator)
         {
-//            return wait_Elements_Visibility(50,driver.findElements(locator));
-            return driver.findElements(wait_Locator_Visibility(locator));
+            try {
+                return driver.findElements(wait_Element_Presence(10,locator));
+            }
+            catch (TimeoutException e)
+            {
+                e.printStackTrace();
+                reload();
+                return driver.findElements(wait_Element_Presence(10,locator));
+            }
         }
         /*****************************************ASSISTIVE_METHODS******************************************/
         protected void scrollTo_Highlight(WebElement ele, String color)
@@ -214,6 +240,11 @@
             js.executeScript("arguments[0].focus",ele);
             js.executeScript("arguments[0].innerText=" + text, ele);
         }
+        protected String js_Get_Text(WebElement ele)
+        {
+            js = (JavascriptExecutor) driver;
+            return (String)js.executeScript("return arguments[0].textContent;",ele);
+        }
         protected void js_Highlight_Element(WebElement ele, String color)
         {
             js = (JavascriptExecutor) driver;
@@ -249,6 +280,12 @@
         }
 
         /******************************************EXPLICIT_WAIT*********************************************/
+        protected By wait_Element_Presence(int seconds, By ele)
+        {
+            wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+            wait.until(ExpectedConditions.presenceOfElementLocated(ele));
+            return ele;
+        }
         protected By wait_Locator_Visibility(By locator)
         {
             wait = new WebDriverWait(driver,Duration.ofSeconds(50));

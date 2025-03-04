@@ -55,7 +55,7 @@ public class Buy_Video_Games_Test extends TestBase {
         vga.filter_With_New_Condition();
         vga.open_Sort_Menu();
         vga.sort_High_To_Low();
-        vga.add_Products_with_Price_Less_Than_Cap_Price(15000);
+        vga.add_Products_with_Price_Less_Than_Cap_Price(15000.00);
 
 //        vgp.videoGamesScreenConfirmation();
 //        vgp.chooseFreeShipping();
