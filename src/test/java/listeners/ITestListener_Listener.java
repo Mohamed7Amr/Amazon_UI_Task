@@ -7,7 +7,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -31,10 +30,12 @@ public class ITestListener_Listener implements ITestListener {
     }
 
     /********************************LISTENER_IMPLEMENTATIONS************************************************/
+    @SneakyThrows
     @Override
     public void onTestStart(ITestResult result) {
-
         System.out.println("Test case has started");
+        FileUtils.deleteDirectory(new File("Screenshots"));
+        FileUtils.deleteDirectory(new File("allure-results"));
     }
     @Override
     @SneakyThrows

@@ -1,6 +1,0 @@
-fake_Username: kristie.turcotte
-fake_Password: Wingardium Leviosa
-fake_OTP: 342958
-fake_Username: luise.gulgowski
-fake_Password: Alohomora
-fake_OTP: 247912

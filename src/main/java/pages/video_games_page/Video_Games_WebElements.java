@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.Page_Base;
-
 import java.util.List;
 
 public class Video_Games_WebElements extends Page_Base {
@@ -27,19 +26,15 @@ public class Video_Games_WebElements extends Page_Base {
     By new_Condition_Link_Locator = By.xpath("//span[@class='a-size-base a-color-base'][contains(text(),'New')]");
     By sort_DDL_Locator = By.xpath( "//span[@class='a-dropdown-label'][contains(text(),'Sort by:')]");
     By high_To_Low_Option_Locator = By.xpath( "//li[contains(.,'Price: High to Low')]");
-//    By product_Price_Label_Locator = By.xpath("//span[@class='a-price']//span[@class='a-price-whole']");
-    By product_Price_Label_Locator = By.xpath("//span[@data-component-type='s-search-results']//span[@class='a-price']/span[@class='a-offscreen']");
-//    By search_Result_Form_Locator = By.xpath("//form[@method='post']");//span[@data-component-type='s-search-results']//span[@class='a-price']/span[@class='a-offscreen']  //div[@data-cy='price-recipe']//span[@class='a-offscreen'] //div[@data-cy='price-recipe']//span[@class='a-price']/span[@class='a-offscreen']
-    By inner_Card_Of_Search_Result_Info_Locator = By.xpath("//div[@data-cy='price-recipe']/parent::div[@class='puisg-col-inner']");
-    By add_To_Cart_Btn_Locator = By.xpath("//button[@class='a-button-text'][text()='Add to cart']");
+    By product_Price_Label_Locator = By.xpath("//button[@class='a-button-text'][text()='Add to cart']/ancestor::div[@class='puisg-col-inner']//span[@class='a-price']/span[@class='a-offscreen']");
     By next_Page_Btn_Locator = By.xpath("//a[contains(text(),'Next')]");
     By cart_Btn_Locator = By.id("nav-cart-count-container");
 
-
-
     /****************************************WEB-ELEMENTS*******************************************/
-    @FindBy(xpath = "//div[@data-cy='price-recipe']//span[@class='a-price']/span[@class='a-offscreen']")
+    @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']/ancestor::div[@class='puisg-col-inner']//span[@class='a-price']/span[@class='a-offscreen']")
     WebElement product_Price;
-    @FindBy(xpath = "//div[@data-cy='price-recipe']//span[@class='a-price']/span[@class='a-offscreen']")
+    @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']/ancestor::div[@class='puisg-col-inner']//span[@class='a-price']/span[@class='a-offscreen']")
     List<WebElement> products_Prices;
+    @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']")
+    List<WebElement> add_To_Cart_Btns;
 }

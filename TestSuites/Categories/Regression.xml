@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression">
-
-    <parameter name="browser" value="chrome"/>
-    
+    <listeners>
+        <listener class-name="listeners.ITestListener_Listener"/>
+    </listeners>
     <test name="Regression">
-
+        <groups>
+            <run>
+                <include name="Regression"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="test"/>
+        </packages>
         <classes>
-            <class name="tests.login_tests.Login_Test"/>
-            <class name="tests.add_KYC_tests.Create_Submit_Register_KYC_Tests"/>
+            <class name="tests.Buy_Video_Games_Test"/>
         </classes>
     </test>
-
 </suite>

@@ -16,13 +16,6 @@ public class Map_Data {
         key_Values.add(item_Value);
         flow_Data.put(key,key_Values);
     }
-
-    /**
-     *
-     * @param key
-     * @param index_Item_In_LinkedList
-     * @return
-     */
     public static Double get_Map_Key_Data(String key, int index_Item_In_LinkedList)
     {
         return flow_Data.get(key).get(index_Item_In_LinkedList);
