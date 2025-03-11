@@ -1,7 +1,6 @@
 package data_writer;
 
 import lombok.SneakyThrows;
-
 import java.io.FileWriter;
 
 /**

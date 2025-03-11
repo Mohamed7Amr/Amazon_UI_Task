@@ -31,10 +31,6 @@ public class Video_Games_WebElements extends Page_Base {
     By cart_Btn_Locator = By.id("nav-cart-count-container");
 
     /****************************************WEB-ELEMENTS*******************************************/
-    @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']/ancestor::div[@class='puisg-col-inner']//span[@class='a-price']/span[@class='a-offscreen']")
-    WebElement product_Price;
-    @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']/ancestor::div[@class='puisg-col-inner']//span[@class='a-price']/span[@class='a-offscreen']")
-    List<WebElement> products_Prices;
     @FindBy(xpath = "//button[@class='a-button-text'][text()='Add to cart']")
     List<WebElement> add_To_Cart_Btns;
 }

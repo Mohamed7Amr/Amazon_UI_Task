@@ -27,6 +27,4 @@ public class Load_Properties {
             load_Properties_Data("src/test/resources/Files_To_Read_From/Properties/Add_To_Cart.properties");
 
 
-    /************************************READ_FROM_POST_EXECUTION_DATA**************************************/
-
 }
