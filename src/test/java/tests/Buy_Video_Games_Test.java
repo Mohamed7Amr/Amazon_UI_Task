@@ -1,7 +1,7 @@
 package tests;
 
 import static data_reader.Load_Properties.*;
-
+import listeners.IRetryAnalyzer_Listener;
 import listeners.ITestListener_Listener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -25,7 +25,7 @@ public class Buy_Video_Games_Test extends TestBase {
     private final String max_Price = add_To_Cart_Data.getProperty("max_Price");
 
     /************************************************TEST_STEPS******************************************************/
-    @Test(groups = {"Regression"})//retryAnalyzer = IRetryAnalyzer_Listener.class)
+    @Test(groups = {"Regression"},retryAnalyzer = IRetryAnalyzer_Listener.class)
     public void buy_Video_Game()
     {
         ITestListener_Listener.driver = driver;
